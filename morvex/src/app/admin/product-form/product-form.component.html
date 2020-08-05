@@ -15,10 +15,11 @@
       <div class="input-group-prepend">
         <span class="input-group-text" id="basic-addon1">$</span>
       </div>
-      <input #price="ngModel" ngModel name="price" id="price" type="number" class="form-control" required>
+      <input #price="ngModel" ngModel name="price" id="price" type="number" class="form-control" [min]="0" required>
     </div>
     <div *ngIf="price.touched && price.invalid" class="alert alert-danger">
-      Price is Required
+      <div *ngIf="price.errors.required">Price is Required</div>
+      <div *ngIf="price.errors.min">Price should be 0 or greater than 0</div>
     </div>
   </div>
 
