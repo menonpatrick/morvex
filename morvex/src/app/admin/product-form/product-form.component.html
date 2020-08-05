@@ -19,7 +19,7 @@
     </div>
     <div *ngIf="price.touched && price.invalid" class="alert alert-danger">
       <div *ngIf="price.errors.required">Price is Required</div>
-      <div *ngIf="price.errors.min">Price should be 0 or greater than 0</div>
+      <div *ngIf="price.errors?.min">Price should be 0 or greater than 0</div>
     </div>
   </div>
 
